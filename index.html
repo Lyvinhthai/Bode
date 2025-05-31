@@ -27,7 +27,7 @@
       </div>
     </header>
 
-    <!-- Navbar -->
+    <!-- Navbar (trên cùng) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#"
@@ -53,22 +53,51 @@
       </div>
     </nav>
 
-    <!-- Nội dung -->
-    <main class="container my-5">
-      <h2>Giới thiệu</h2>
-      <p>
-        Website này sử dụng Bootstrap 5 và có giao diện responsive, đẹp mắt, dễ
-        sử dụng trên mọi thiết bị.
-      </p>
-      <img
-        src="images/banner.jpg"
-        class="img-fluid rounded shadow"
-        alt="Banner Demo"
-      />
-    </main>
+    <!-- Layout 2 cột: Sidebar + Nội dung -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar trái -->
+        <aside
+          class="col-lg-2 d-none d-lg-block bg-light p-3 border-end min-vh-100"
+        >
+          <h5 class="text-center mb-4"><strong>Danh mục</strong></h5>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="bi bi-building"></i> BỒ ĐỀ TỰ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="bi bi-heart"></i> BỒ ĐỀ TÂM</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="bi bi-people"></i> BỒ ĐỀ ĐẠO TRÀNG</a
+              >
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Nội dung chính -->
+        <main class="col-lg-10 col-12 p-4">
+          <h2>Giới thiệu</h2>
+          <p>
+            Website này sử dụng Bootstrap 5 và có giao diện responsive, đẹp mắt,
+            dễ sử dụng trên mọi thiết bị.
+          </p>
+          <img
+            src="images/banner.jpg"
+            class="img-fluid rounded shadow"
+            alt="Banner Demo"
+          />
+        </main>
+      </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
+    <footer class="bg-dark text-white text-center py-4 mt-5">
       <p>&copy; 2025 Thiết kế bởi <strong>Bode Team</strong></p>
     </footer>
 
