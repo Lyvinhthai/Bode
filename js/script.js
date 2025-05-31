@@ -1,5 +1,3 @@
-// script.js
-console.log("Website Bode đã sẵn sàng!");
 // Load HTML partials
 function includeHTML(id, file) {
   fetch(file)
