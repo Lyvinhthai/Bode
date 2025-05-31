@@ -16,15 +16,9 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- <header>... -->
-    <div id="header-placeholder"></div>
-
-    <!-- Sidebar -->
-    <!-- <aside>... -->
-    <div class="row">
-      <div id="sidebar-placeholder" class="col-lg-2 d-none d-lg-block"></div>
-      <main class="col-lg-10 col-12 p-4">...</main>
-    </div>
+    <header class="bg-primary text-white text-center py-4 banner">
+      <h1>BỒ ĐỀ TỰ</h1>
+    </header>
 
     <div class="container-fluid">
       <div class="row">
@@ -48,14 +42,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-      // Đánh dấu menu hiện tại là "active"
-      const currentPath = window.location.pathname.split("/").pop();
-      document.querySelectorAll(".nav-link").forEach((link) => {
-        if (link.getAttribute("href") === currentPath) {
-          link.classList.add("active");
-        }
-      });
-    </script>
   </body>
 </html>
