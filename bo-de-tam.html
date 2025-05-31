@@ -20,14 +20,79 @@
       <h1>BỒ ĐỀ TÂM</h1>
     </header>
 
+    <!-- Navbar (trên cùng) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          ><i class="bi bi-house-door"></i> Trang chủ</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Giới thiệu</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Dịch vụ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Layout 2 cột: Sidebar + Nội dung -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar trái -->
+        <aside
+          class="col-lg-2 d-none d-lg-block bg-light p-3 border-end min-vh-100"
+        >
+          <h5 class="text-center mb-4"><strong>Danh mục</strong></h5>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="./bo-de-tu.html"
+                ><i class="bi bi-building"></i> BỒ ĐỀ TỰ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bo-de-tam.html"
+                ><i class="bi bi-heart"></i> BỒ ĐỀ TÂM</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bo-de-dao-trang.html"
+                ><i class="bi bi-people"></i> BỒ ĐỀ ĐẠO TRÀNG</a
+              >
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Nội dung chính -->
+        <main class="col-lg-10 col-12 p-4">
+          <h2>Giới thiệu</h2>
+          <p>
+            Website này sử dụng Bootstrap 5 và có giao diện responsive, đẹp mắt,
+            dễ sử dụng trên mọi thiết bị.
+          </p>
+          <img
+            src="images/banner.jpg"
+            class="img-fluid rounded shadow"
+            alt="Banner Demo"
+          />
+        </main>
+      </div>
+    </div>
     <div class="container-fluid">
       <div class="row">
         <!-- Sidebar -->
         <!-- (chèn sidebar giống phần trên) -->
 
         <!-- Nội dung -->
-        <!-- bo-de-tam.html -->
-        <!-- giống bo-de-tu.html, chỉ thay phần nội dung chính -->
         <main class="col-lg-10 col-12 p-4">
           <h2>Giới thiệu về Bồ Đề Tâm</h2>
           <p>
@@ -37,7 +102,6 @@
         </main>
       </div>
     </div>
-
     <footer class="bg-dark text-white text-center py-4">
       <p>&copy; 2025 Bồ Đề Tâm</p>
     </footer>
