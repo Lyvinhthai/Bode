@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thêm cơ sở thờ tự</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+      h2 {
+        text-align: center;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Thêm cơ sở thờ tự mới</h2>
+
+    <form id="form-them-co-so">
+      <label>Tên cơ sở:</label>
+      <input
+        name="ten_co_so"
+        placeholder="Nhập tên chùa, đình, miếu..."
+        required
+      />
+
+      <label>Loại cơ sở:</label>
+      <select name="loai" required>
+        <option value="">-- Chọn loại --</option>
+        <option value="chùa">Chùa</option>
+        <option value="đình">Đình</option>
+        <option value="miếu">Miếu</option>
+        <option value="tự">Tự</option>
+      </select>
+
+      <label>Địa chỉ:</label>
+      <input name="dia_chi" placeholder="Địa chỉ đầy đủ" />
+
+      <label>Năm xây dựng:</label>
+      <input
+        name="nam_xay_dung"
+        type="number"
+        min="1000"
+        max="2100"
+        placeholder="VD: 1880"
+      />
+
+      <label>Trụ trì (nếu có):</label>
+      <input name="tru_tri" placeholder="Tên trụ trì" />
+
+      <label>Mô tả:</label>
+      <textarea
+        name="mo_ta"
+        rows="4"
+        placeholder="Giới thiệu sơ lược..."
+      ></textarea>
+
+      <label>Link hình ảnh (nếu có):</label>
+      <input name="hinh_anh" placeholder="https://..." />
+
+      <button type="submit">Thêm cơ sở</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("form-them-co-so")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(this);
+          const data = Object.fromEntries(formData.entries());
+
+          fetch("http://localhost:3000/api/co-so", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          })
+            .then((res) => {
+              if (!res.ok) throw new Error("Thêm thất bại!");
+              return res.json();
+            })
+            .then(() => {
+              alert("Đã thêm cơ sở thành công!");
+              this.reset();
+            })
+            .catch((err) => {
+              alert("Lỗi khi thêm cơ sở: " + err.message);
+            });
+        });
+    </script>
+  </body>
+</html>

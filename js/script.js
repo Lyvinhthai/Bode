@@ -6,6 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("header-placeholder").innerHTML = data;
       setActiveMenuLink("header-placeholder");
     });
+  // Load bo-de-tu.html
+  fetch("http://localhost:3000/api/chua")
+    .then((res) => res.json())
+    .then((data) => {
+      const container = document.getElementById("danh-sach-chua");
+      data.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "chua-item";
+        div.innerHTML = `
+        <h3>${item.ten_chua}</h3>
+        <p><strong>Địa chỉ:</strong> ${item.dia_chi}</p>
+        <p><strong>Năm xây dựng:</strong> ${item.nam_xay_dung}</p>
+        <p><strong>Trụ trì:</strong> ${item.tru_tri}</p>
+        <p>${item.mo_ta}</p>
+        ${item.hinh_anh ? `<img src="${item.hinh_anh}" width="300">` : ""}
+        <hr/>
+      `;
+        container.appendChild(div);
+      });
+    });
 
   // Load sidebar (nếu có)
   const sidebar = document.getElementById("sidebar-placeholder");
